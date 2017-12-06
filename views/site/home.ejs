@@ -1,0 +1,49 @@
+<% include ./partials/header.ejs %>
+
+<div id="myContainer">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <% for (let i = 0, len = carouselArticles.length; i < len; ++i) { %>
+                <li data-target="#myCarousel" data-slide-to="<%=i %>"></li>
+            <% } %>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <% carouselArticles.forEach(article => { %>
+                <div class="item">
+                    <a href="/article/<%=article.id %>"><img class="second-slide" src="/images/covers/<%=article.image %>" alt="<%=article.title %>"></a>
+                    <div class="container-fluid">
+                        <p class="date"><%=article.date %></p>
+                        <div class="carousel-caption">
+                            <p><a href="/article/<%=article.id %>"><%=article.title %></a></p>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <div class="container">
+        <h1 class="text-center">Latest posts</h1>
+        <% latestArticles.forEach(article => { %>
+            <div class="post-item">
+                <h2><a href="/article/<%=article.id %>"><%=article.title %></a></h2>
+                <div>
+                    <span><%=article.author %></span>
+                    <span>&nbsp;|&nbsp;<%=article.date %></span>
+                </div>
+                <a href="/article/<%=article.id %>"><img src="/images/covers/<%=article.image %>" class="img-rounded" alt="<%=article.title %>"></a>
+                <p><%=article.summary %></p>
+                <a class="btn btn-info btn-block" href="/article/<%=article.id %>">Read more</a>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include ./partials/footer.ejs %>

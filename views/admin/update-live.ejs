@@ -1,0 +1,27 @@
+<% include ./partials/header.ejs %>
+
+  <div id="myContainer">
+    <div class="container">
+      <h1 class="text-center">Update Live</h1>
+      <form id="updateForm">
+        <div class="form-group">
+          <label>Title</label>
+          <input class="form-control" name="title" type="text" placeholder="Title" value="<%=live.title %>">
+        </div>
+        <div class="form-group">
+          <label>Summary</label>
+          <textarea class="form-control" name="summary" rows="5" placeholder="Summary"><%=live.summary %></textarea>
+        </div>
+        <div class="form-group">
+          <div id="coverImage">
+            <label>Image</label><br>
+            <img class="img-responsive img-thumbnail" src="/images/covers/<%=live.image %>" alt="<%=live.title %>" data-src="<%=live.image %>">
+            <input class="form-control" name="image" type="file" accept=".jpg, .jpeg, .png, .gif">
+          </div>
+        </div>
+        <button class="btn btn-success" type="submit">Update</button>
+      </form>
+    </div>
+  </div>
+
+  <% include ./partials/footer.ejs %>

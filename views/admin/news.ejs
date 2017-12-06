@@ -1,0 +1,57 @@
+<% include ./partials/header.ejs %>
+
+<div id="myContainer">
+  <h1 class="text-center">News</h1>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Update</th>
+        <th>Carousel</th>
+        <th>Published</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% articles.forEach(article => { %>
+        <tr>
+          <td><a href="/admin/article/<%=article.id %>"><%=article.title %></a></td>
+          <td align="center">
+            <a class="btn btn-info" href="/admin/article/update/<%=article.id %>">
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            </a>
+          </td>
+          <td align="center">
+            <% if (article.isCarousel) { %>
+              <button class="btn btn-success carousel-btn" data-article-id="<%=article.id %>">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </button>
+            <% } else { %>
+              <button class="btn btn-warning carousel-btn" data-article-id="<%=article.id %>">
+                <i class="fa fa-times" aria-hidden="true"></i>
+              </button>
+            <% } %>
+          </td>
+          <td align="center">
+            <% if (article.isPublish) { %>
+              <button class="btn btn-success published-btn" data-article-id="<%=article.id %>">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </button>
+            <% } else { %>
+              <button class="btn btn-warning published-btn" data-article-id="<%=article.id %>">
+                <i class="fa fa-times" aria-hidden="true"></i>
+              </button>
+            <% } %>
+          </td>
+          <td align="center">
+            <button class="btn btn-danger delete-btn" data-article-id="<%=article.id %>">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>
+
+<% include ./partials/footer.ejs %>

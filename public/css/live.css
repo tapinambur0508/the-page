@@ -1,0 +1,17 @@
+@import "/css/news.css" screen;
+@import "/css/comment.css" screen;
+
+body {
+  overflow-y: hidden;
+}
+#myContainer .post-container,
+#myContainer .comment-container {
+  margin-top: 20px;
+  height: 83vh;
+}
+#myContainer .post-container,
+#myContainer .post-container .posts,
+#myContainer .comment-container .comments {
+  width: 100%;
+  padding-right: 30px;
+}

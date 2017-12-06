@@ -1,0 +1,61 @@
+@import "/css/masonry.css" screen;
+
+#myContainer .post-item {
+    margin: 20px 0;
+    padding: 8px 15px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+}
+#myContainer .post-item img {
+    margin: 5px auto;
+    transition: opacity 0.3s ease-in-out;
+}
+#myContainer .post-item img:hover {
+   opacity: 0.6;
+}
+#myContainer .post-item .online-label,
+#myContainer .post-item .offline-label {
+    position: absolute;
+    right: -8px;
+    top: -3px;
+    color: #fff;
+    font-size: 1.6em;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+#myContainer .post-item .online-label {
+    background: #5cb85c;
+}
+#myContainer .post-item .offline-label {
+    background: #d9534f;
+}
+/* Extra small devices (phones, less than 768px) */
+@media screen and (max-width: 767.9px) {
+    #myContainer {
+        width: 100%;
+        margin: 65px auto 10px;
+    }
+}
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) and (max-width: 991.9px) {
+    #myContainer {
+        width: 90%;
+        margin: 70px auto 20px;
+    }
+}
+/* Medium devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) and (max-width: 1199.9px) {
+    #myContainer {
+        width: 90%;
+        margin: 75px auto 20px;
+    }
+}
+/* Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+    #myContainer {
+        width: 90%;
+        margin: 80px auto 20px;
+    }
+}
+  

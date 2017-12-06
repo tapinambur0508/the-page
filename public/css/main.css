@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Roboto');
+
+body {
+    overflow-x: hidden;
+    background: #efefef;
+    font-family: 'Roboto', sans-serif;
+}
+a,
+a:hover {
+    outline: none !important;
+    text-decoration: none !important;
+}
+button:active,
+button:focus {
+    outline: none !important;
+}
+button::-moz-focus-inner {
+    border: 0 !important;
+}
+header {
+    box-shadow: 0 0 4px;
+    background: #d2cec3;
+}
+header.navbar {
+    border: none;
+}
+header .icon-bar {
+    background: #191919;
+}
+header .navbar-brand {
+    margin: 0;
+    color: #191919;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: 'Cinzel', sans-serif;
+}
+header ul.navbar-nav li a {
+    color: #191919;
+}
+header ul.navbar-right {
+    margin-right: 0;
+}
+header .google-btn {
+    color: #fff !important;
+    background: #d34836;
+    font-weight: 600;
+    text-align: center;
+}
+header .google-btn:hover {
+    color: #000 !important;
+}
+header .dropdown-menu {
+    font-size: inherit;
+    background: #d2cec3;
+    padding: 0;
+}
+header .dropdown-menu a {
+    padding: 8px 20px;
+}
+header .dropdown-menu li:last-child a {
+    border-radius: 0  0 4px 4px;
+}
+footer {
+    color: #fff;
+    background: #02323b;
+    padding: 30px 10px 20px;
+}
+footer h3 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+footer a.social-icons {
+    margin: 0 5px;
+    color: #fff;
+}
+table {
+    width: 100%;
+}
+table thead th {
+    font-weight: bold;
+    text-align: center;
+}
+table tbody td {
+    padding: 5px 10px;
+}
+.video-wrapper {
+    margin: 10px auto;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.img-wrapper {
+    width: 100%;
+    min-height: 20px;
+    margin: 10px 0;
+    overflow: hidden;
+    position: relative;
+}
+.img-wrapper img {
+    max-width: 100%;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+.img-wrapper .header,
+.img-wrapper .views,
+.img-wrapper .date {
+    color: #fff;
+    text-shadow: 2px 2px 4px #000;
+}
+.img-wrapper .header {
+    position: absolute;
+    left: 6%;
+    right: 6%;
+    bottom: 35px;
+    text-align: center;
+}
+.img-wrapper .date {
+    position: absolute;
+    bottom: 0;
+    right: 18px;
+}
+.img-wrapper .views {
+    position: absolute;
+    bottom: 0;
+    left: 18px;
+}
+.btn,
+.form-control {
+    margin: 5px 0;
+}
+.form-control {
+    height: auto;
+}
+label {
+    font-size: 16px;
+}
+blockquote {
+    border-left: 5px solid #87D37C;
+}
+#up {
+    z-index: 10;
+    right: 25px;
+    bottom: 20px;
+    display: none;
+    color: #bb1515;
+    cursor: pointer;
+    position: fixed;
+}
+/* Extra small devices (phones, less than 768px) */
+@media screen and (max-width: 767.9px) {
+    header .navbar-brand {
+        font-size: 24px;
+    }
+    header .google-btn {
+        margin-left: 15px;
+    }
+    h1 {
+        font-size: 26px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    h3,
+    table,
+    p,
+    span,
+    input,
+    textarea,
+    ul,
+    ol,
+    .btn,
+    .form-control {
+        font-size: 18px;
+    }
+    .img-wrapper .header {
+        font-size: 22px;
+    }
+    #up {
+        font-size: 3em;
+    }
+}
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) and (max-width: 991.9px) {
+    header .navbar-brand {
+        font-size: 24px;
+    }
+    h1 {
+        font-size: 32px;
+    }
+    h2 {
+        font-size: 26px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    table,
+    p,
+    span,
+    input,
+    textarea,
+    ul,
+    ol,
+    .btn,
+    .form-control {
+        font-size: 18px;
+    }
+    .img-wrapper .header {
+        font-size: 24px;
+    }
+    #up {
+        font-size: 3em;
+    }
+}
+/* Medium devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) and (max-width: 1199.9px) {
+    header .navbar-brand {
+        font-size: 26px;
+    }
+    h1 {
+        font-size: 34px;
+    }
+    h2 {
+        font-size: 28px;
+    }
+    h3 {
+        font-size: 22px;
+    }
+    table,
+    p,
+    span,
+    input,
+    textarea,
+    ul,
+    ol,
+    .btn,
+    .form-control {
+        font-size: 20px;
+    }
+    .img-wrapper .header {
+        font-size: 28px;
+    }
+    #up {
+        font-size: 3.5em;
+    }
+}
+/* Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+    header .navbar-brand {
+        font-size: 28px;
+    }
+    table,
+    p,
+    span,
+    input,
+    textarea,
+    ul,
+    ol,
+    .btn,
+    .form-control {
+        font-size: 20px;
+    }
+    .img-wrapper .header {
+        font-size: 30px;
+    }
+    #up {
+        font-size: 4.5em;
+    }
+}

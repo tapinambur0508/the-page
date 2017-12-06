@@ -1,0 +1,44 @@
+<% include ./partials/header.ejs %>
+
+<div id="myContainer">
+  <div class="container">
+    <h1 class="text-center">Update Article</h1>
+    <form id="updateForm">
+      <div class="form-group">
+        <label>Title</label>
+        <input class="form-control" name="title" type="text" placeholder="Title" value="<%=article.title %>">
+      </div>
+      <div class="form-group">
+        <label>Summary</label>
+        <textarea class="form-control" name="summary" rows="5" placeholder="Summary"><%=article.summary %></textarea>
+      </div>
+      <div class="form-group">
+        <label>Content</label>
+        <textarea id="content" style="display: none"><%=article.content %></textarea>
+        <div id="summernote"></div>
+      </div>
+      <div class="form-group">
+        <div id="coverImage">
+          <label>Image</label><br>
+          <img class="img-responsive img-thumbnail" src="/images/covers/<%=article.image %>" alt="<%=article.title %>" data-src="<%=article.image %>">
+          <input class="form-control" name="image" type="file" accept=".jpg, .jpeg, .png, .gif">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Categories</label>
+        <input value="<%=article.categories.join() %>" name="categories" data-role="tagsinput">
+      </div>
+      <div class="form-group">
+        <label>Author</label>
+        <input class="form-control" name="author" placeholder="Author" value="<%=article.author %>">
+      </div>
+      <div class="form-group">
+        <label>Date</label>
+        <input class="form-control" name="date" placeholder="Date" value="<%=article.date %>">
+      </div>
+      <button class="btn btn-success" type="submit">Update</button>
+    </form>
+  </div>
+</div>
+
+<% include ./partials/footer.ejs %>

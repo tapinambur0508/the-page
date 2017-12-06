@@ -1,0 +1,93 @@
+#myCarousel {
+  margin: 15px 0;
+}
+#myCarousel img {
+    width: 100%;
+    min-height: 40vh;
+    max-height: 80vh;
+}
+#myCarousel .carousel-caption a,
+#myCarousel .date,
+#myCarousel .carousel-control {
+  text-shadow: 2px 2px 4px #000;
+}
+#myCarousel .carousel-caption {
+    left: 4%;
+    right: 4%;
+    bottom: 15px;
+}
+#myCarousel .carousel-caption a {
+    color: #fff;
+    text-align: center;
+}
+#myCarousel .carousel-caption a:hover {
+    color: #ff4f00;
+}
+#myCarousel .date {
+    position: absolute;
+    color: #fff;
+    bottom: 5px;
+    right: 20px;
+}
+#myContainer .post-item {
+    margin: 20px auto;
+    border-top: 1px solid #c4d6dd;
+}
+#myContainer .post-item img {
+    width: 100%;
+    margin: 5px auto;
+}
+/* Extra small devices (phones, less than 768px) */
+@media screen and (max-width: 767.9px) {
+  #myCarousel .carousel-caption a {
+    font-size: 24px;
+  }
+  #myCarousel .carousel-control {
+    display: none;
+  }
+  #myCarousel .carousel-indicators {
+    display: none;
+  }
+  #myCarousel .date {
+    font-size: 18px;
+  }
+  #myContainer {
+    margin: 55px auto 10px;
+  }
+}
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) and (max-width: 991.9px) {
+  #myCarousel .carousel-caption a {
+    font-size: 26px;
+  }
+  #myCarousel .date {
+    font-size: 20px;
+  }
+  #myContainer {
+    margin: 65px auto 20px;
+  }
+}
+/* Medium devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) and (max-width: 1199.9px) {
+  #myCarousel .carousel-caption a {
+    font-size: 28px;
+  }
+  #myCarousel .date {
+    font-size: 22px;
+  }
+  #myContainer {
+    margin: 65px auto 20px;
+  }
+}
+/* Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+  #myCarousel .carousel-caption a {
+    font-size: 30px;
+  }
+  #myCarousel .date {
+    font-size: 24px;
+  }
+  #myContainer {
+    margin: 60px auto 20px;
+  }
+}

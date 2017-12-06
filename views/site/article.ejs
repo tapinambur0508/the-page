@@ -1,0 +1,63 @@
+<% include ./partials/header.ejs %>
+
+<div id="myContainer">
+    <div class="container">
+        <h1 class="text-center"><%=article.title %></h1>
+        <div>
+            <span><%=article.author %></span>
+            <span>&nbsp;|&nbsp;<%=article.date %></span>
+        </div>
+    </div>
+    <div id="myCarousel">
+        <img src="/images/covers/<%=article.image %>" alt="<%=article.title %>">
+    </div>
+    <div class="container">
+        <div class="full-content">
+            <%- article.content %>
+        </div>
+        <!-- AddToAny BEGIN -->
+        <div class="a2a_kit a2a_kit_size_36 a2a_default_style">
+            <a class="a2a_button_facebook"></a>
+            <a class="a2a_button_twitter"></a>
+            <a class="a2a_button_google_plus"></a>
+        </div>
+        <script async src="https://static.addtoany.com/menu/page.js"></script>
+        <!-- AddToAny END -->
+        <h2><%=article.comments.length === 1 ? `${article.comments.length} Comment` : `${article.comments.length} Comments` %></h2>
+        <% if (user) { %>
+            <form class="form-horizontal" id="commentForm"> 
+                <textarea class="form-control" name="text" rows="3" placeholder="Write a message..."></textarea>
+                <button class="btn btn-success" type="submit">
+                    <i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;Post
+                </button>      
+            </form>
+        <% } else { %>
+            <p class="text-center">Something to say?</p>
+            <p class="text-center">
+                <a href="/auth/google"><img src="/images/google-button.png" alt="Sign in with Google" height="60px"></a>
+            </p>
+        <% } %>
+        <div class="comments">
+            <% article.comments.reverse().forEach(comment => { %>
+                <div class="panel post panel-shadow">
+                    <div class="post-heading">
+                        <div class="pull-left">
+                            <img src="<%=comment.userThumbnail %>" class="img-circle avatar" alt="<%=comment.username %>">
+                        </div>
+                        <div class="pull-left meta">
+                            <div class="title">
+                                <h4><b><%=comment.username %></b></h4>
+                            </div>
+                            <h5 class="text-muted"><%=comment.time %>&nbsp;&nbsp;<%=comment.date %></h5>
+                        </div>
+                    </div>
+                    <div class="post-description"> 
+                        <p><%=comment.text %></p>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</div>
+
+<% include ./partials/footer.ejs %>

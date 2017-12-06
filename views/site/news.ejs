@@ -1,0 +1,24 @@
+<% include ./partials/header.ejs %>
+
+<div id="myContainer">
+  <h1 class="text-center"><%= header; %></h1>
+  <% if (description) { %>
+    <p class="text-center"><%=description; %></p>
+  <% } %>
+  <div class="row masonry" data-columns>
+    <% articles.forEach(article => { %>
+      <div class="post-item">
+        <h2 class="text-center"><a href="/article/<%=article.id %>"><%=article.title %></a></h2>
+        <div>
+          <span><%=article.author %></span>
+          <span>&nbsp;|&nbsp;<%=article.date %></span>
+        </div>
+        <a href="/article/<%=article.id %>"><img src="/images/covers/<%=article.image %>" class="img-responsive img-rounded" alt="<%=article.title %>"></a>
+        <p><%=article.summary %></p>
+        <a class="btn btn-info btn-block" href="/article/<%=article.id %>">Read more</a>
+      </div>
+    <% }); %>
+  </div>
+</div>
+
+<% include ./partials/footer.ejs %>

@@ -1,0 +1,22 @@
+<% include ./partials/header.ejs %>
+
+<div id="myContainer">
+  <div class="container">
+    <h1 class="text-center"><%=article.title %></h1>
+    <div>
+      <span><%=article.author %></span>
+      <span>&nbsp;|&nbsp;<%=article.date %></span>
+    </div>
+  </div>
+  <div id="myCarousel">
+    <img src="/images/covers/<%=article.image %>" alt="<%=article.title %>">
+  </div>
+  <div class="container">
+    <div class="full-content">
+      <%- article.content %>
+    </div>
+    </div>
+  </div>
+</div>
+
+<% include ./partials/footer.ejs %>

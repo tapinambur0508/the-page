@@ -1,0 +1,22 @@
+<% include ./partials/header.ejs %>
+
+<div id="myContainer">
+  <h1 class="text-center">Live</h1>
+  <div class="row masonry" data-columns>
+    <% liveList.forEach(live => { %>
+      <div class="post-item">
+        <% if (live.isOnline) { %>
+          <span class="online-label">Online</span>
+        <% } else { %>
+          <span class="offline-label">Offline</span>
+        <% } %>
+        <h2 class="text-center"><a href="/live/<%=live.id %>"><%=live.title %></a></h2>
+        <a href="/live/<%=live.id %>"><img src="/images/covers/<%=live.image %>" class="img-responsive img-rounded" alt="<%=live.title %>"></a>
+        <p><%=live.summary %></p>
+        <a class="btn btn-info btn-block" href="/live/<%=live.id %>">Connect</a>
+      </div>
+    <% }); %>
+  </div>
+</div>
+
+<% include ./partials/footer.ejs %>

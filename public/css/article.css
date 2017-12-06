@@ -1,0 +1,7 @@
+@import "/css/home.css" screen;
+@import "/css/comment.css" screen;
+
+#myContainer .comments {
+  width: 60%;
+  margin: 20px 0 0;
+}

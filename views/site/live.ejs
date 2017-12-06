@@ -1,0 +1,84 @@
+<% include ./partials/header.ejs %>
+
+<div id="myContainer">
+    <h1 class="text-center"><%=live.title %></h1>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="post-container">
+                <div class="posts" style="overflow-y: auto; height: 100%">
+                    <% live.posts.forEach(post => { %>
+                        <div class="panel post panel-shadow">
+                            <div class="post-heading">
+                                <div class="pull-left">
+                                    <img src="<%=post.userThumbnail %>" class="img-circle avatar" alt="<%=post.username %>">
+                                </div>
+                                <div class="pull-left meta">
+                                    <div class="title">
+                                        <h4><b><%=post.username %></b></h4>
+                                    </div>
+                                    <h5 class="text-muted"><%=post.date %></h5>
+                                </div>
+                            </div>
+                            <div class="post-description">
+                                <% if (post.image) { %>
+                                    <p><%=post.text %></p>
+                                <% } %>
+                                <% if (post.image) { %>
+                                    <img class="img-responsive img-rounded" src="/images/posts/<%=post.image %>">
+                                <% } %>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="comment-container">
+                <div class="comments" style="overflow-y: auto; height: 80%">
+                    <% live.comments.forEach(comment => { %>
+                        <div class="panel post panel-shadow">
+                            <div class="post-heading">
+                                <div class="pull-left">
+                                    <img src="<%=comment.userThumbnail %>" class="img-circle avatar" alt="<%=comment.username %>">
+                                </div>
+                                <div class="pull-left meta">
+                                    <div class="title">
+                                        <h4><b><%=comment.username %></b></h4>
+                                    </div>
+                                    <h5 class="text-muted"><%=comment.date %></h5>
+                                </div>
+                            </div>
+                            <div class="post-description">
+                                <p><%=comment.text %></p>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+                <% if (user && live.isOnline) { %>
+                    <form class="form-horizontal" id="commentForm"> 
+                        <textarea class="form-control" name="text" rows="2" placeholder="Write a message..."></textarea>
+                        <button class="btn btn-success" type="submit">
+                            <i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;Post
+                        </button>      
+                    </form>
+                <% } else if (live.isOnline === false) { %>
+                    <p class="text-center">You couldn't leave a comment, because live is offline</p>
+                <% } else { %>
+                    <p class="text-center">Something to say?</p>
+                    <p class="text-center">
+                        <a href="/auth/google"><img src="/images/google-button.png" alt="Sign in with Google" height="60px"></a>
+                    </p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <audio id="audio" src="/audio/beep.mp3" autostart="false" ></audio>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/site/main.js"></script>
+<script src="/js/site/live.js"></script>
+</body>
+</html>

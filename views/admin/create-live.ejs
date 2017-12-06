@@ -1,0 +1,27 @@
+<% include ./partials/header.ejs %>
+
+<div id="myContainer">
+  <div class="container">
+    <h1 class="text-center">Create Live</h1>
+    <form id="createForm" enctype="multipart/form-data" method="POST">
+      <div class="form-group">
+        <label>Title</label>
+        <input class="form-control" name="title" type="text" placeholder="Title" autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label>Summary</label>
+        <textarea class="form-control" name="summary" rows="5" placeholder="Summary"></textarea>
+      </div>
+      <div class="form-group">
+        <div id="coverImage">
+          <label>Image</label><br>
+          <img class="" src="" alt="">
+          <input class="form-control" name="image" type="file" accept=".jpg, .jpeg, .png, .gif">
+        </div>
+      </div>
+      <button class="btn btn-success" type="submit">Create</button>
+    </form>
+  </div>
+</div>
+
+<% include ./partials/footer.ejs %>
